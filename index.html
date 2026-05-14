@@ -44,11 +44,7 @@
             </div>
         </div>
         <div class="scroll-down">
-            <a href="#about">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+            <a href="#about" class="scroll-arrow">↓</a>
         </div>
     </header>
 
@@ -98,7 +94,7 @@
                     <h3>前端开发</h3>
                     <p>HTML, CSS, JavaScript</p>
                     <div class="skill-level">
-                        <div class="skill-bar" style="width: 60%"></div>
+                        <div class="skill-bar" data-width="60%"></div>
                     </div>
                 </div>
                 <div class="skill-card">
@@ -106,7 +102,7 @@
                     <h3>后端开发</h3>
                     <p>Python, Java</p>
                     <div class="skill-level">
-                        <div class="skill-bar" style="width: 70%"></div>
+                        <div class="skill-bar" data-width="70%"></div>
                     </div>
                 </div>
                 <div class="skill-card">
@@ -114,7 +110,7 @@
                     <h3>数据库</h3>
                     <p>SQL, MySQL, PostgreSQL</p>
                     <div class="skill-level">
-                        <div class="skill-bar" style="width: 50%"></div>
+                        <div class="skill-bar" data-width="50%"></div>
                     </div>
                 </div>
                 <div class="skill-card">
@@ -122,7 +118,7 @@
                     <h3>工具</h3>
                     <p>Git, VS Code</p>
                     <div class="skill-level">
-                        <div class="skill-bar" style="width: 65%"></div>
+                        <div class="skill-bar" data-width="65%"></div>
                     </div>
                 </div>
             </div>
@@ -209,27 +205,27 @@
                             <span class="contact-icon">📧</span>
                             <div>
                                 <h4>邮箱</h4>
-                                <p>your.email@example.com</p>
+                                <p>2902566720@qq.com</p>
                             </div>
                         </div>
                         <div class="contact-method">
                             <span class="contact-icon">💼</span>
                             <div>
                                 <h4>GitHub</h4>
-                                <p>github.com/tineiyoucaihong</p>
+                                <a href="https://github.com/tineiyoucaihong" target="_blank">github.com/tineiyoucaihong</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="您的名字" required>
+                        <input type="text" name="name" placeholder="您的名字" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="您的邮箱" required>
+                        <input type="email" name="email" placeholder="您的邮箱" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="您的留言" rows="5" required></textarea>
+                        <textarea placeholder="您的留言" name="message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">发送消息</button>
                 </form>

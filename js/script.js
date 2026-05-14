@@ -32,13 +32,21 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 const navbar = document.querySelector('#navbar');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+// 使用节流函数
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+      if (!ticking) {
+          window.requestAnimationFrame(() => {
+              if (window.scrollY > 100) {
+                  navbar.classList.add('scrolled');
+              } else {
+                  navbar.classList.remove('scrolled');
+              }
+              ticking = false;
+          });
+          ticking = true;
+      }
+  });
 
 // ===================================
 // 平滑滚动
@@ -120,12 +128,11 @@ const animateSkills = () => {
     const sectionTop = skillsSection.getBoundingClientRect().top;
 
     if (sectionTop < window.innerHeight - 100) {
-        skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
+        skillBars.forEach((bar, index) => {
+            const width = bar.getAttribute('data-width');
             setTimeout(() => {
                 bar.style.width = width;
-            }, 100);
+            }, index * 150);  // 每个延迟150ms，依次触发
         });
         skillsAnimated = true;
     }
